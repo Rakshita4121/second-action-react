@@ -3,6 +3,18 @@ on:
   pull_request:
     types:
       - opened
+      - closed
+    branches: 
+      - main
+      - 'dev-*' 
+      - 'feat/**'
+  push:
+    branches: 
+      - main
+      - 'dev-*' 
+      - 'feat/**'
+    paths-ignore: #files in a specific folder
+      - '.github/workflows/*'
   workflow_dispatch:
 jobs:
   test:
